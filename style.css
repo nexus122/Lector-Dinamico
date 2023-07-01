@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "dyslexic";
+    src: url("./assets/OpenDyslexic-Regular.otf") format("truetype");
+  }
+
+  #pantalla {
+    font-family: "dyslexic", sans-serif;
+  }

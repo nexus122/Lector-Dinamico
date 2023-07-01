@@ -29,7 +29,7 @@ let aux = 0;
 
 start.addEventListener("click", ()=>{
     hide("start");
-    if(textarea.value) textArray = textarea.value.split(" ");    
+    if(textarea.value) textArray = textarea.value.split(/\s+|\n/);    
     escritor = setInterval(()=>{                
             pantalla.innerHTML = textArray[aux];
             aux++;
@@ -39,7 +39,7 @@ start.addEventListener("click", ()=>{
                 aux = 0;
             }
     }    
-    , speedTime);    
+    , speedTime);
 })
 
 pause.addEventListener("click", ()=>{
@@ -68,5 +68,5 @@ function hide(param){
     }else if(param = "start"){
         start.style = "display:none"
         pause.style = "display:block"
-    }        
+    }
 }
