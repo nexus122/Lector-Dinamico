@@ -10,7 +10,7 @@ let textarea = document.querySelector("#textarea")
 pause.style = "display:none"
 // Variables de texto
 let textArray = ["Escribe", "un", "texto", "arriba", "para", "empezar."];
-
+let isWorking = false;
 const min = 150;
 const max = 750;
 
@@ -48,7 +48,7 @@ pause.addEventListener("click", ()=>{
 })
 
 stop.addEventListener("click", ()=>{
-    hide("pause");    
+    hide("pause");
     aux = 0;
     pantalla.innerHTML = "";
     clearInterval(escritor);
@@ -59,14 +59,17 @@ speed.addEventListener("change", ()=>{
     const porcentaje = speed.value;  
     const valorMilisegundos = min + ((100 - porcentaje) / 100) * (max-min);
     speedTime = valorMilisegundos;
+    if(isWorking) start.click();
 })
 
 function hide(param){
     if(param == "pause"){
         pause.style = "display:none"
         start.style = "display:block"
+        isWorking = false;
     }else if(param = "start"){
         start.style = "display:none"
         pause.style = "display:block"
+        isWorking = true;
     }
 }
