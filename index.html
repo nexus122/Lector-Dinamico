@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>📖</text></svg>">
+    <!-- Fontawersome -->
+    <script src="https://kit.fontawesome.com/dd6579785a.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>   
+    <style type="text/tailwindcss">
+        @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <title>Lector de textos</title>
+</head>    
+    <body>
+        <main class="container m-auto flex flex-col h-screen justify-center">
+            <h1 class="text-4xl">Lee mas rapido</h1>
+            <div class="w-full flex flex-col">
+            <textarea name="textarea" id="textarea" placeholder="Pega tu texto aqui" class="h-52 border-2 border-sky-700" value=""></textarea>
+
+            <article id="pantalla" class="text-9xl h-96 w-full bg-black text-white flex items-center justify-center p-1">
+
+            </article>
+                
+                <div>
+                    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Velocidad</label>
+                    <input type="range" min="0" max="100" value="0" id="speed" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                <div class="flex w-full">
+                    <button id="start" class="w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1"><i class="fa-solid fa-play"></i></button>
+                    <button id="pause" class="w-1/2 bg-red-200 hover:bg-red-300 text-white font-bold py-2 px-4 rounded mt-1"><i class="fa-solid fa-pause"></i></button>
+                    <button id="stop" class="w-1/2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-1"><i class="fa-solid fa-stop"></i></button>
+                </div>
+                
+
+            </div>            
+        </main>
+    </body>            
+</html>
+
+<script src="./index.js"></script>
