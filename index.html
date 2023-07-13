@@ -19,30 +19,29 @@
     <meta property="og:description" content="Aumenta tu velocidad de lectura con esta herramienta!">
 </head>
 
-<body class="flex bg-gray-700 h-screen justify-center items-center">
+<body class="flex bg-gray-700 h-screen justify-center items-center polka">
     <main class="container m-auto flex flex-col justify-center bg-white p-2 rounded">
         <h1 class="text-5xl mb-2">📖 Lector Dinámico</h1>
         <p>Para empezar, pega tu texto aqui 👇 abajo y dale al boton play.</p>
 
         <div class="w-full flex flex-col">
-            <div class="w-full rounded overflow-hidden shadow-lg px-6 py-4 mt-2 mb-2">
                 <textarea name="textarea" id="textarea" placeholder="Pega tu texto aqui"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="block mt-1 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     value=""></textarea>
-            </div>
-            <div class="w-full rounded overflow-hidden shadow-lg px-6 py-4 mt-2 mb-2">
+
+            <div class="w-full rounded overflow-hidden px-6 py-4 mt-2 mb-2 bg-black">
                 <article id="pantalla"
                     class="text-5xl md:text-9xl h-96 w-full bg-black text-white flex items-center justify-center p-1">
                 </article>
             </div>
 
-            <div class="w-full rounded overflow-hidden shadow-lg px-6 py-4 mt-2 mb-2">
+            <div class="w-full rounded overflow-hidden px-6 py-4 mt-2 mb-2">
                 <label for="first_name"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Velocidad</label>
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-black"><i class="fa-solid fa-gauge-simple-high"></i> Velocidad</label>
                 <input type="range" min="0" max="100" value="0" id="speed"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
-            <div class="flex w-full w-full rounded overflow-hidden shadow-lg px-6 py-4 mt-2 mb-2">
+            <div class="flex w-full w-full rounded overflow-hidden px-6 py-4 mt-2 mb-2">
                 <button id="start"
                     class="w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1"><i
                         class="fa-solid fa-play"></i></button>

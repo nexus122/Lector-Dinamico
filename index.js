@@ -41,7 +41,7 @@ start.addEventListener("click", () => {
 
 function paintTheCenter(param) {
 
-    let largo = param.length;    
+    let largo = param.length;
     let arrString = param.split("");
     let middle = [];
 
