@@ -14,60 +14,73 @@ let isWorking = false;
 const min = 150;
 const max = 750;
 
-let speedTime = max;
+let speedTime = min;
+
+speed.value = 100;
 
 hide("pause");
 
 // Bucle
 let escritor;
 let aux = 0;
-// 1000 es un segundo 60000 es un minuto
-// si dividimos las palabras por 60000 sacaremos las palabras por minuto
 
-// 400 palabras / 60000 = 15 palabras por segundo
-// 15 palabras por minuto
-
-start.addEventListener("click", ()=>{
+start.addEventListener("click", () => {
     hide("start");
-    if(textarea.value) textArray = textarea.value.split(/\s+|\n/);    
-    escritor = setInterval(()=>{                
-            pantalla.innerHTML = textArray[aux];
-            aux++;
-            if(aux >= textArray.length) {
-                hide("pause");
-                clearInterval(escritor);
-                aux = 0;
-            }
-    }    
-    , speedTime);
+    if (textarea.value) textArray = textarea.value.split(/\s+|\n/);
+    escritor = setInterval(() => {
+        pantalla.innerHTML = paintTheCenter(textArray[aux]);
+        aux++;
+        if (aux >= textArray.length) {
+            hide("pause");
+            clearInterval(escritor);
+            aux = 0;
+        }
+    }
+        , speedTime);
 })
 
-pause.addEventListener("click", ()=>{
+function paintTheCenter(param) {
+
+    let largo = param.length;
+    let arrString = param.split("");
+    let middle = [];
+
+    middle.push(Math.ceil(largo / 2));
+    if (largo % 2 == 0) middle.push((largo / 2) + 1);
+
+    return arrString.reduce((acc, letter, index) => {
+        if (middle.includes(index+1)) return acc += "<span class='text-red-600'>" + letter + "</span>";
+        else return acc += letter;
+    }, "");    
+
+}
+
+pause.addEventListener("click", () => {
     hide("pause");
-    clearInterval(escritor);    
+    clearInterval(escritor);
 })
 
-stop.addEventListener("click", ()=>{
+stop.addEventListener("click", () => {
     hide("pause");
     aux = 0;
     pantalla.innerHTML = "";
     clearInterval(escritor);
 })
 
-speed.addEventListener("change", ()=>{
+speed.addEventListener("change", () => {
     clearInterval(escritor);
-    const porcentaje = speed.value;  
-    const valorMilisegundos = min + ((100 - porcentaje) / 100) * (max-min);
+    const porcentaje = speed.value;
+    const valorMilisegundos = min + ((100 - porcentaje) / 100) * (max - min);
     speedTime = valorMilisegundos;
-    if(isWorking) start.click();
+    if (isWorking) start.click();
 })
 
-function hide(param){
-    if(param == "pause"){
+function hide(param) {
+    if (param == "pause") {
         pause.style = "display:none"
         start.style = "display:block"
         isWorking = false;
-    }else if(param = "start"){
+    } else if (param = "start") {
         start.style = "display:none"
         pause.style = "display:block"
         isWorking = true;
