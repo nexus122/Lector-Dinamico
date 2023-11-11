@@ -6,7 +6,7 @@ Con el control de velocidad puedes ponerlo a un ritmo que te sea comodo:
 ![image](https://github.com/nexus122/Lector-Dinamico/assets/22988550/f57757f3-ffb3-40f0-abf2-4cbb635fdfba)
 
 ## Acesibilidad
-La tipografia es (Dyslexie)[https://www.dyslexiefont.com] que ayuda a leer mejor a personas con dislexia como yo.
+La tipografia es [Dyslexie](https://www.dyslexiefont.com) que ayuda a leer mejor a personas con dislexia como yo.
 El centro de las palabras se marca en rojo para tener un punto donde mirar.
 
 ## Screenshot
