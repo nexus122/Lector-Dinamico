@@ -9,8 +9,12 @@ Con el control de velocidad puedes ponerlo a un ritmo que te sea comodo:
 La tipografia es [Dyslexie](https://www.dyslexiefont.com) que ayuda a leer mejor a personas con dislexia como yo.
 El centro de las palabras se marca en rojo para tener un punto donde mirar.
 
-## Screenshot
-![image](https://github.com/nexus122/Lector-Dinamico/assets/22988550/1427a8c9-8ae6-4c51-b90e-570385592957)
+## Video
+https://github.com/nexus122/Lector-Dinamico/assets/22988550/c1eca4e4-56f4-4cf1-9db6-bb8318269f9b
 
 ## Demo
 https://nexus122.github.io/Lector-Dinamico/
+
+
+
+
