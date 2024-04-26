@@ -9,6 +9,10 @@
 - Tipografía Dyslexie: Utiliza la tipografía Dyslexie, especialmente diseñada para facilitar la lectura a personas con dislexia. Esta fuente tipográfica única reduce la confusión entre letras y mejora la legibilidad del texto.
 Marcado del centro de las palabras: Enfatizamos el centro de cada palabra con un resaltado en rojo, proporcionando un punto de enfoque visual durante la lectura. Este recurso ayuda a mantener la atención y facilita la seguimiento del texto.
 
+# Screenshot
+![image](https://github.com/nexus122/Lector-Dinamico/assets/22988550/692bdfc6-28ce-47d4-a75c-757fe5262aef)
+
+
 # Tecnologias
 - Html
 - Css
