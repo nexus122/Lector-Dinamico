@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lofi">
 
 <head>
     <meta charset="UTF-8">
@@ -13,49 +13,57 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style.css">
-    <title>Lector de textos</title>
+    <title>Dinamic Reader</title>
     <meta property="og:image"
         content="https://github-production-user-asset-6210df.s3.amazonaws.com/22988550/250310974-0397d58b-f61d-4fa1-8774-acb7e0613705.png">
     <meta property="og:description" content="Aumenta tu velocidad de lectura con esta herramienta!">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body class="flex bg-gray-700 h-screen justify-center items-center polka">
-    <main class="container m-auto flex flex-col justify-center bg-white p-2 rounded">
-        <h1 class="text-5xl mb-2">📖 Lector Dinámico</h1>
-        <p>Para empezar, pega tu texto aqui 👇 abajo y dale al boton play.</p>
-
-        <div class="w-full flex flex-col">
-                <textarea name="textarea" id="textarea" placeholder="Pega tu texto aqui"
-                    class="block mt-1 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-300 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    value=""></textarea>
-
-            <div class="w-full rounded overflow-hidden px-6 py-4 mt-2 mb-2 bg-black">
-                <article id="pantalla"
-                    class="text-5xl md:text-9xl h-96 w-full bg-black text-white flex items-center justify-center p-1">
-                </article>
-            </div>
-
-            <div class="w-full rounded overflow-hidden px-6 py-4 mt-2 mb-2">
-                <label for="first_name"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-black"><i class="fa-solid fa-gauge-simple-high"></i> Velocidad</label>
-                <input type="range" min="0" max="100" value="0" id="speed"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            </div>
-            <div class="flex w-full w-full rounded overflow-hidden px-6 py-4 mt-2 mb-2">
-                <button id="start"
-                    class="w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1"><i
-                        class="fa-solid fa-play"></i></button>
-                <button id="pause"
-                    class="w-1/2 bg-blue-400 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded mt-1"><i
-                        class="fa-solid fa-pause"></i></button>
-                <button id="stop"
-                    class="w-1/2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-1"><i
-                        class="fa-solid fa-stop"></i></button>
-            </div>
+<body class="flex flex-col flex-wrap h-screen justify-center items-center bg-base-content">
+    <header class="flex w-full justify-between bg-primary items-center pl-1">
+        <h1 class="text-2xl">📖 Dynamic reader</h1>
+        <div>
+            <select id="temas" class="select select-primary w-full max-w-xs p-1">
+                <option disabled selected>Choose a color theme</option>
+            </select>
         </div>
+    </header>
+    <main class="container m-auto flex flex-col justify-center bg-white p-2 rounded">
+        <div class="w-full flex flex-col">
+            <div class="flex">
+                <textarea name="textarea" id="textarea" placeholder="Past your text here"
+                    class="block mt-1 p-2.5 w-5/6 text-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    value=""></textarea>
+                <button class="w-1/6 bg-primary font-bold py-2 px-4 mt-1" id="btnPegar"><i
+                        class="fa-regular fa-paste"></i> Paste</button>
+            </div>
+            
+                <div class="w-full rounded overflow-hidden px-6 py-4 mt-2 mb-2 bg-black">
+                    <article id="pantalla"
+                        class="text-3xl md:text-8xl h-96 w-full bg-black text-white flex items-center justify-center p-1">
+                    </article>
+                </div>
+
+                <div class="flex w-full w-full rounded overflow-hidden gap-1">
+                    <button class="w-1/2 btn btn-primary text-white" id="start"><i class="fa-solid fa-play"></i>
+                        Play</button>
+                    <button id="pause" class="w-1/2 btn btn-error text-white"><i class="fa-solid fa-pause"></i>
+                        Pause</button>
+                    <button id="stop" class="w-1/2 btn btn-accent text-white"><i class="fa-solid fa-stop"></i>
+                        Stop</button></button>
+                </div>
+
+                </hr>
+
+                <div class="w-full flex rounded overflow-hidden items-center mt-1 gap-1">
+                    <div class="badge badge-accent"><i class="fa-solid fa-gauge-simple-high"></i> Speed</div>
+                    <input type="range" min="0" max="100" value="40" id="speed" class="range range-primary" />
+                </div>            
+        </div>        
     </main>
 </body>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./index.js"></script>
 
 </html>
-
-<script src="./index.js"></script>
